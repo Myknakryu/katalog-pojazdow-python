@@ -1,32 +1,20 @@
-from enum import Enum
-
-
-class typ_skrzyni(Enum):
-    Manualna = 0
-    Automatyczna = 1
-
-
-class Pojazd:
-    def __init__(self, marka, model, rocznik, pojemnosc, przebieg, skrzynia):
-        self.Marka = marka
-        self.Model = model
-        self.Rocznik = rocznik
-        self.Pojemnosc = pojemnosc
-        self.Przebieg = przebieg
-        self.Skrzynia = skrzynia
-
-    def wypisz(self):
-        txt = "{} {} - {} - {} cm³ - {}km - {}"
-        print(txt.format(self.Marka, self.Model, self.Rocznik, self.Pojemnosc, self.Przebieg, self.Skrzynia.name))
-
-
-def print_hi(name):
-    print(f'Hi, {name}')
-
+from pojazd import *
+from operacje_plikowe import *
+from menu import generuj_menu
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    x = Pojazd("Audi", "TT", 2004, 1800, 200000, typ_skrzyni.Manualna)
-    x.wypisz()
-
-
+    katalog = []
+    while True:
+        generuj_menu()
+        opcja = int(input("Wybierz opcje: "))
+        if opcja == 1:
+            katalog = wczytanie()
+        elif opcja == 2:
+            zapis(katalog)
+        elif opcja == 3:
+            for pojazd in katalog:
+                pojazd.wypisz()
+        elif opcja == 4:
+            katalog.append(wczytaj_pojazd())
+        elif opcja == 9:
+            break
