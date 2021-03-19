@@ -12,3 +12,12 @@ def generuj_menu():
         print(txt.format(i, opcja))
     pass
 
+
+def wybor_elementu(katalog, wiadomosc):
+    txt = "{} \n Zakres od 0 do {} "
+    while len(katalog) > 0:
+        opcja = int(input(txt.format(wiadomosc, len(katalog)-1)))
+        if 0 < opcja < len(katalog):
+            return opcja
+
+
