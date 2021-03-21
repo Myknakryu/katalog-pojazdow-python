@@ -1,7 +1,7 @@
 
 opcje_menu = ["Wczytaj bazę", "Zapisz bazę", "Wypisz bazę", "Wprowadź pojazd do bazy",
               "Usuń element z bazy", "Wyświetl szczegóły pojazdu", "Sortuj",
-              "Wyszukaj", "Wyjdź z programu"]
+              "Wyświetl nowe pojazdy", "Wyjdź z programu"]
 
 
 def generuj_menu():
@@ -24,7 +24,7 @@ def wybor_elementu(katalog, wiadomosc):
 def wybor_atrybutu(element):
     txt = "{}. {}"
     i = 0
-    for atrybut in dir(element)[0:5]:
+    for atrybut in dir(element)[0:6]:
         print(txt.format(i, atrybut))
         i += 1
     opcja = int(input("Wybierz opcje: "))

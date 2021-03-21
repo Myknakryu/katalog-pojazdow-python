@@ -3,6 +3,7 @@ from operacje_plikowe import *
 from funkcje import *
 from menu import *
 
+
 if __name__ == '__main__':
     katalog = []
     while True:
@@ -24,8 +25,17 @@ if __name__ == '__main__':
             x = wybor_elementu(katalog, "Podaj element do wyświetlenia")
             katalog[x].wypisz()
         elif opcja == 7:
-            sortuj(katalog, wybor_atrybutu(katalog[0]), False)
+            atrybut = wybor_atrybutu(katalog[0])
+            rosnaca = False
+            if int(input("Wprowadź (1) aby sortować rosnąco: ")) == 1:
+                rosnaca = True
+            sortuj(katalog, atrybut, rosnaca)
         elif opcja == 8:
-            print(dir(katalog[0]))
+            import datetime
+            rok =  datetime.datetime.now().year - 2
+            print("Pojazdy wyprodukowane po {}:".format(rok))
+            for x in katalog:
+                if x.Rocznik >= rok:
+                    x.wypisz()
         elif opcja == 9:
             break

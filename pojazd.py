@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class typ_skrzyni(Enum):
+class typ_skrzyni(IntEnum):
     Manualna = 0
     Automatyczna = 1
 
