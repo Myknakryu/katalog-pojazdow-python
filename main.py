@@ -1,6 +1,7 @@
 from pojazd import *
 from operacje_plikowe import *
-from menu import generuj_menu, wybor_elementu
+from funkcje import *
+from menu import *
 
 if __name__ == '__main__':
     katalog = []
@@ -22,5 +23,9 @@ if __name__ == '__main__':
         elif opcja == 6:
             x = wybor_elementu(katalog, "Podaj element do wyświetlenia")
             katalog[x].wypisz()
+        elif opcja == 7:
+            sortuj(katalog, wybor_atrybutu(katalog[0]), False)
+        elif opcja == 8:
+            print(dir(katalog[0]))
         elif opcja == 9:
             break
